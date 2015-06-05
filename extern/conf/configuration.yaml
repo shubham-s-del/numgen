@@ -1,0 +1,12 @@
+server:
+#  softNofileLimit: 1000
+#  hardNofileLimit: 1000
+  applicationConnectors:
+    - type: http
+      port: 8080
+
+mongo-server:
+  hosts:
+    - localhost
+  dbname: knowStore
+
