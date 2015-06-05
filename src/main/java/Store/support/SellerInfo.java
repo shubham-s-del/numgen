@@ -1,19 +1,43 @@
 
 package Store.support;
 
+import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Indexed;
+import org.mongodb.morphia.annotations.Property;
+
 import java.util.List;
 import java.util.Map;
 
 /**
  * Created by shubham.srivastava on 05/06/15.
  */
+@Entity(noClassnameStored=true, value="UserInfo")
 public class SellerInfo {
-    private String sellerName;
+
+    @Id
+    private ObjectId id;
+
+    @Property("emailId") @Indexed(unique=true)
     private String emailId;
+
+    @Property("sellerName")
+    private String sellerName;
+
+    @Property("latitude")
     private float lat;
+
+    @Property("longitude")
     private float lon;
+
+    @Property("phoneNo")
     private String phNo;
+
+    @Property("openHours")
     private Map<EnumList.DaysOfTheWeek, List<OpenHours>> openHours;
+
+    @Property("sellerType")
     private String sellerType;
 
     public Map<EnumList.DaysOfTheWeek, List<OpenHours>> getOpenHours() {

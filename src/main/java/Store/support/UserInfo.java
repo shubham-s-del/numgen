@@ -1,14 +1,33 @@
 package Store.support;
 
+import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Indexed;
+import org.mongodb.morphia.annotations.Property;
+
 /**
  * Created by shubham.srivastava on 06/06/15.
  */
+@Entity(noClassnameStored=true, value="UserInfo")
 public class UserInfo {
 
+    @Id
+    private ObjectId id;
+
+    @Property("emailId") @Indexed(unique=true)
     private String emailId;
+
+    @Property("latitude")
     private double lat;
+
+    @Property("longitude")
     private double lon;
+
+    @Property("phoneNo")
     private String phNo;
+
+    @Property("gcmId")
     private String gcmId;
 
     public UserInfo(String emailId, double lat, double lon, String phNo, String gcmId) {

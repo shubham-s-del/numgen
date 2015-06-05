@@ -41,6 +41,8 @@ public class KnowStoreService extends Application<KnowStoreConfiguration> {
 
         Injector injector = Guice.createInjector(storeMod);
 
+        environment.jersey().register(new RegisterResource());
+
         // nothing to do yet
     }
 

@@ -9,10 +9,19 @@ import javax.ws.rs.core.MediaType;
 @Path("/register")
 public class RegisterResource {
 
+
+
     @Path("/seller/{sellerId}")
     @POST
     @Produces(value = MediaType.APPLICATION_JSON)
     public RegisterResponse registerSeller (@PathParam("sellerId") String sellerId) {
+        return null;
+    }
 
+    @Path("/user/{userId}")
+    @POST
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public RegisterResponse registerUser (@PathParam("userId") String userId) {
+        return null;
     }
 }

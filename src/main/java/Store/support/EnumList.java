@@ -48,7 +48,7 @@ public class EnumList {
             }
         };
 
-        private String enumName;
+        public String enumName;
 
         DaysOfTheWeek(String enumName) {
             this.enumName = enumName;

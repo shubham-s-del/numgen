@@ -13,9 +13,13 @@ public interface SellerDao {
 
     void deleteAllSellers();
 
+    void deleteSeller(String email);
+
     List<String> findNearest(double latitude, double longitude, int number);
 
-    List<String> findAll(double latitude, double longitude);
+    List<String> findAll();
+
+    List<SellerInfo> findAllSellersInfo();
 
     SellerInfo findByEmailId(String emailId);
 
