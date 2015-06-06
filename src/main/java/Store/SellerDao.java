@@ -15,13 +15,17 @@ public interface SellerDao {
 
     void deleteSeller(String email);
 
-    List<String> findNearest(double latitude, double longitude, int number);
+    List<SellerInfo> findNearest(double longitude, double latitude, int number);
 
     List<String> findAll();
 
     List<SellerInfo> findAllSellersInfo();
 
     SellerInfo findByEmailId(String emailId);
+
+    List<SellerInfo> findNearByType(String storeType, double longitude, double latitude, int number);
+
+    SellerInfo findNearestOneByType(String storeType, double longitude, double latitude);
 
 
 }

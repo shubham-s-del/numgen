@@ -6,6 +6,7 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Indexed;
 import org.mongodb.morphia.annotations.Property;
+import org.mongodb.morphia.utils.IndexDirection;
 
 import java.util.List;
 import java.util.Map;
@@ -39,6 +40,26 @@ public class SellerInfo {
 
     @Property("sellerType")
     private String sellerType;
+
+    @Property("LocationIndex") @Indexed(IndexDirection.GEO2DSPHERE)
+    private double[] locationIndex;
+
+    public ObjectId getId() {
+        return id;
+    }
+
+    public void setId(ObjectId id) {
+        this.id = id;
+    }
+
+    public double[] getLocationIndex() {
+
+        return locationIndex;
+    }
+
+    public void setLocationIndex(double[] locationIndex) {
+        this.locationIndex = locationIndex;
+    }
 
     public Map<EnumList.DaysOfTheWeek, List<OpenHours>> getOpenHours() {
         return openHours;

@@ -16,6 +16,8 @@ public class RegisterResource {
     @Produces(value = MediaType.APPLICATION_JSON)
     public RegisterResponse registerSeller (@PathParam("sellerId") String sellerId) {
         return null;
+
+        //TODO: Complete this
     }
 
     @Path("/user/{userId}")
@@ -23,5 +25,7 @@ public class RegisterResource {
     @Produces(value = MediaType.APPLICATION_JSON)
     public RegisterResponse registerUser (@PathParam("userId") String userId) {
         return null;
+
+        //TODO: Complete this
     }
 }
