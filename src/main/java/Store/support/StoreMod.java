@@ -1,5 +1,11 @@
 package Store.support;
 
+import Store.Impls.MorphiaTemplateImpl;
+import Store.Impls.SellerDaoImpl;
+import Store.Impls.UserDaoImpl;
+import Store.MorphiaTemplate;
+import Store.SellerDao;
+import Store.UserDao;
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.AbstractMatcher;
@@ -52,6 +58,10 @@ public class StoreMod extends AbstractModule {
         bind(new TypeLiteral<List<String>>() {
         }).annotatedWith(Names.named("morphia.hosts")).toInstance(mongoHosts);
         bind(String.class).annotatedWith(Names.named("morphia.dbname")).toInstance(dbName);
+
+        bind(MorphiaTemplate.class).to(MorphiaTemplateImpl.class).asEagerSingleton();
+        bind(SellerDao.class).to(SellerDaoImpl.class).asEagerSingleton();
+        bind(UserDao.class).to(UserDaoImpl.class).asEagerSingleton();
 
     }
 

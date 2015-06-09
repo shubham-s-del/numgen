@@ -24,8 +24,21 @@ public class UserInfo {
     @Property("longitude")
     private double lon;
 
+    public UserInfo(String emailId, String gcmId) {
+        this.emailId = emailId;
+        this.gcmId = gcmId;
+    }
+
     @Property("phoneNo")
+
     private String phNo;
+
+    public UserInfo(ObjectId id, String emailId, String phNo, String gcmId) {
+        this.id = id;
+        this.emailId = emailId;
+        this.phNo = phNo;
+        this.gcmId = gcmId;
+    }
 
     @Property("gcmId")
     private String gcmId;
