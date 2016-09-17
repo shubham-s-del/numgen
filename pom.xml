@@ -164,11 +164,11 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <finalName>fk-geolocation</finalName>
+                            <finalName>knowstore-api</finalName>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.flipkart.geoloc.service.GeolocApplication</mainClass>
+                                    <mainClass>Service.NumGenService</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
